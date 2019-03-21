@@ -15,6 +15,6 @@ int main()
 	// VectDate vDate = {{1, 2, 1927}, {3, 4, 2002}, {5, 5, 2001}};
 
 	test(vString);
-	cout << endl << endl;
+	cout << endl;
 	test(vCouleur);
 }
