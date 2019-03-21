@@ -83,9 +83,7 @@ template <typename T> void display (T v)
 template <typename T> void test (T v)
 {
 	display(v);
-
 	quicksort(v.begin(), v.end());
-
 	display(v);
 }
 
