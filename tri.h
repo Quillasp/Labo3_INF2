@@ -46,10 +46,10 @@ template <typename T> T partition(T BeginIterator, T EndIterator)
         *j = tmp;
     }
 
-    std::iter_swap(i, EndIterator - 1);
-    auto tmp = *(EndIterator - 1);
-    *(EndIterator - 1) = *i;
-    *i = tmp;
+    // std::iter_swap(i, EndIterator - 1);
+    auto tmp = *i;
+    *i = *(EndIterator - 1);
+    *(EndIterator - 1) = tmp;
     return i;
 
 }
@@ -61,9 +61,9 @@ template <typename T> void quicksort (T BeginIterator, T EndIterator)
 
     auto p = selectPivot(BeginIterator, EndIterator);
     // std::iter_swap(EndIterator - 1, p);
-    auto tmp = *p;
-    *p = *(EndIterator - 1);
-    *(EndIterator - 1) = tmp;
+    auto tmp = *(EndIterator - 1);
+    *(EndIterator - 1) = *p;
+    *p = tmp;
 
     auto i = partition(BeginIterator, EndIterator);
 
