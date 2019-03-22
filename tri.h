@@ -4,6 +4,12 @@
 #include <iostream>
 #include <vector>
 
+/**
+ * @brief Détermine le pivot à utiliser dans le tri rapide
+ * @param begin : début du vecteur à trier
+ * @param end : fin du vecteur à trier
+ * @return : retourne un itérateur du type contenu dans le vecteur
+ */
 template < typename RandomAccessIterator >
 RandomAccessIterator selectPivot( const RandomAccessIterator begin,
                                  const RandomAccessIterator end )
@@ -23,6 +29,12 @@ RandomAccessIterator selectPivot( const RandomAccessIterator begin,
     }
 }
 
+/**
+ * @brief Partitionne le vecteur pour permettre l'appel récursif sur chacun des sous-tableaux
+ * @param BeginIterator : début du vecteur à trier
+ * @param EndIterator : fin du vecteur à trier
+ * @return : retourne un itérateur du type contenu dans le vecteur
+ */
 template <typename T> T partition(T BeginIterator, T EndIterator)
 {
     auto i = BeginIterator - 1;
@@ -54,6 +66,12 @@ template <typename T> T partition(T BeginIterator, T EndIterator)
 
 }
 
+/**
+ * @brief Quicksort ou tri rapide, qui effectuera le tri en faisant un appel récursif. Le pivot y est déterminé
+ * et le partitionnement aussi.
+ * @param begin : début du vecteur à trier
+ * @param end : fin du vecteur à trier
+ */
 template <typename T> void quicksort (T BeginIterator, T EndIterator)
 {
     if (EndIterator - 1 <= BeginIterator)
@@ -71,6 +89,10 @@ template <typename T> void quicksort (T BeginIterator, T EndIterator)
     quicksort(i + 1, EndIterator);
 }
 
+/**
+ * @brief Affichage du contenu d'un tableau
+ * @param v : vecteur à afficher
+ */
 template <typename T> void display (T v)
 {
 	for (auto i = v.begin(); i != v.end(); i++)
@@ -80,6 +102,10 @@ template <typename T> void display (T v)
 	std::cout << std::endl;
 }
 
+/**
+ * @brief Affiche le vecteur avant et après le tri
+ * @param v : vecteur à tester
+ */
 template <typename T> void test (T v)
 {
 	display(v);
