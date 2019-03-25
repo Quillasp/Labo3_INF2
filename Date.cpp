@@ -1,7 +1,8 @@
 /**
  * @file Date.cpp
  * @author  Janssens Emmanuel, Lamrani soulaymane
- * @brief 
+ * @brief  implémentation des fonctions qui permettent de 
+ * gérer des dates
  * @version 0.1
  * @date 2019-02-26
  * 

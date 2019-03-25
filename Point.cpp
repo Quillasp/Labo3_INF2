@@ -1,3 +1,13 @@
+/**
+ * @file Point.cpp
+ * @author Janssens emmanuel
+ * @brief Coordonées dans le plan réel et toute les fonctions qui vont avec
+ * @version 0.1
+ * @date 2019-03-24
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "Point.h"
 #include <cmath>
 

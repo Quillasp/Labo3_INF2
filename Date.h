@@ -1,7 +1,8 @@
 /**
  * @file Date.h
  * @author Janssens emmanuel, Lamrani soulaymane 
- * @brief 
+ * @brief déclaration de toutes les foncitons, et utilités 
+ *          pour manipuler des dates
  * @version 0.1
  * @date 2019-02-26
  * 

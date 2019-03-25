@@ -1,3 +1,14 @@
+/**
+ * @file tri.h
+ * @author Lamrani Soulaymane
+ * @brief content toutes les fonctions qui permettent de trier un tableau 
+ *        générique
+ * @version 0.1
+ * @date 2019-03-22
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef TRI_H
 #define TRI_H
 

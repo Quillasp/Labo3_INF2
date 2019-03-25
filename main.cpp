@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @author Lamrani Soulaymanne, Janssens Emmanuel
+ * @brief Principalement utilisé pour tester notre tri générique
+ * @version 0.1
+ * @date 2019-03-24
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "tri.h"
 #include "Date.h"
 #include "Point.h"
