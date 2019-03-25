@@ -15,7 +15,7 @@ float Point::distance()const
 {
     float dist = 0;
 
-    dist = sqrt(pow(x,2)+ pow(y,2));
+    dist = (float)sqrt(pow(x,2)+ pow(y,2));
 
     return dist;
 }

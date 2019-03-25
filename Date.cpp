@@ -72,11 +72,11 @@ void Date::setMonth(unsigned month)
 
 void Date::setMonth(string month)
 {
-    for(int i = 0; i < MONTHS; i++)
+    for(size_t i = 0; i < MONTHS; i++)
     {
         if(m_stringMonth[i] == month)
         {
-            m_month = i+1;
+            m_month = (unsigned)i+1;
             break;
         }
     }
@@ -141,7 +141,7 @@ int Date::getNumDaysInMonth(Date::Month month) const
             numDays = 31;
             break;
         case Month::FEVRIER:
-            numDays = isBissextile(m_year) ? 29 : 28;
+            numDays = isBissextile((int)m_year) ? 29 : 28;
          break;
       default:
             numDays = 30;
@@ -158,7 +158,7 @@ bool Date::validateMonth(unsigned int month)
 
 bool Date::validateDay(unsigned int day, unsigned int month)
 {
-    return ((day >= 1 && day <= getNumDaysInMonth((Month) month)));
+    return ((day >= 1 && day <= (unsigned)getNumDaysInMonth((Month) month)));
 }
 
 bool Date::operator<(const Date& date) const
@@ -195,7 +195,7 @@ bool Date::operator==(const Date& date) const
 
 void Date::substractDay(int val)
 {
-    int days_until_previous_month =  m_day;
+    int days_until_previous_month =  (int)m_day;
 
     if(val > days_until_previous_month)
     {
@@ -204,7 +204,7 @@ void Date::substractDay(int val)
         
         for(int i = val; i > 0; i -= days_until_previous_month )
         {
-            m_day = getNumDaysInMonth((Date::Month)(m_month-1));
+            m_day = (unsigned)getNumDaysInMonth((Date::Month)(m_month-1));
 
             m_month--;
 
@@ -216,20 +216,20 @@ void Date::substractDay(int val)
 
             days_until_previous_month = getNumDaysInMonth((Date::Month)(m_month-1)) ;
 
-            m_day -= i;
+            m_day -= (unsigned)i;
 
         }
     }
     else
     {
-        m_day -= val;
+        m_day -= (unsigned)val;
     }
    
 }
 
 void Date::addDay(int val)
 {
-    int days_until_next_month = getNumDaysInMonth((Date::Month)(m_month-1)) - m_day;
+    int days_until_next_month = (int)getNumDaysInMonth((Date::Month)(m_month-1)) - (int)m_day;
 
     if(val > days_until_next_month)
     {
@@ -248,14 +248,14 @@ void Date::addDay(int val)
                 m_month = 1;
             }
 
-            days_until_next_month = getNumDaysInMonth((Date::Month)(m_month-1)) - m_day;
+            days_until_next_month = (int)getNumDaysInMonth((Date::Month)(m_month-1)) - (int)m_day;
 
-            m_day += i;
+            m_day += (unsigned)i;
         }
     }
     else
     {
-        m_day += val;
+        m_day += (unsigned)val;
     }
 
 }
@@ -327,7 +327,7 @@ Date Date::operator>>( string &date)
     int i = 0;
     while(getline(ss,value,'.'))
     {
-        data[i] = stoi(value,nullptr,10);
+        data[i] = (int)stoi(value,nullptr,10);
         i++;
 
     }

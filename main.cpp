@@ -9,9 +9,12 @@ using VectString = vector<string>;
 using VectCouleur = vector<Couleur>;
 using VectDate = vector<Date>;
 using VectPoint = vector<Point>;
+
+ostream& operator<<(ostream& os, const Couleur& couleur);
+
 int main()
 {
-	// vecteurs à trier
+	// vecteurs à trier
 	VectString vString = {"pomme", "citron", "orange", "banane"};
 	VectCouleur vCouleur = {Couleur::orange, Couleur::gray, Couleur::cyan};
 	VectPoint vPoint = {{1, 2}, {3, 4}, {5, 5}, {-1, 7}, {3, 1}};
@@ -24,4 +27,22 @@ int main()
 	test(vDate);
 	cout<<endl;
 	test(vPoint);
+}
+
+ostream& operator<<(ostream& os, const Couleur& couleur)
+{
+	switch(couleur)
+	{
+		case 0:
+			os << "orange";
+			break;
+		case 1:
+			os << "gray";
+			break;
+		case 2:
+			os << "cyan";
+			break;
+	}
+
+    return os;
 }
